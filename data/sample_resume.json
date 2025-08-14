@@ -1,0 +1,106 @@
+{
+  "name": "Happy Nautiyal",
+  "contact": {
+  "phone": "+917206710259",
+  "email": "Happynautiyal24@outlook.com",
+  "linkedin": "https://www.linkedin.com/in/happynautiyal/",
+  "github": "https://github.com/HellDeadShot"
+  },
+  "summary": "Results-oriented Software Development Engineer with a strong foundation in Android application development and a proven ability to lead and manage cross-functional teams. Skilled in Kotlin, Java, data structures, and algorithms, with hands-on experience in building scalable and user-centric applications. Eager to leverage a diverse skill set to contribute to innovative software solutions.",
+  "skills": {
+  "programming_languages": [
+  "Kotlin",
+  "Java",
+  "Python",
+  "SQL"
+  ],
+  "android_development": [
+  "Android Studio",
+  "Jetpack Compose",
+  "MVVM",
+  "Hilt",
+  "Coroutines",
+  "Firebase (Auth, Firestore)"
+  ],
+  "tools_and_technologies": [
+  "Git",
+  "RESTful APIs",
+  "OpenStreetMap API",
+  "OpenWeatherMap API",
+  "yt-dlp",
+  "Material 3 UI"
+  ],
+  "computer_science_fundamentals": [
+  "Data Structures",
+  "Algorithm Analysis",
+  "Object-Oriented Programming"
+  ],
+  "project_and_team_management": [
+  "Team Leadership",
+  "Strategic Planning",
+  "Project Management",
+  "Time Management",
+  "Communication",
+  "Problem Solving",
+  "Debugging",
+  "Version Control"
+  ]
+  },
+  "experience": [
+  {
+  "title": "Manager",
+  "organization": "MercuryAi",
+  "location": "Delhi",
+  "dates": "April 2025 – Present",
+  "tasks": [
+  "Developed and implemented strategic plans, contributing to the achievement of company objectives.",
+  "Oversaw day-to-day team operations, ensuring smooth workflow and maximizing productivity.",
+  "Guided and mentored team members, fostering a collaborative and supportive work environment.",
+  "Analyzed performance data to identify areas for improvement and implemented necessary changes.",
+  "Recruited, onboarded, and trained new team members, ensuring necessary skills and knowledge."
+  ]
+  },
+  {
+  "title": "Android App Developer Intern",
+  "organization": "MercuryAi",
+  "location": "Delhi",
+  "dates": "Feb 2025 – April 2025",
+  "tasks": [
+  "Developed and implemented robust Android applications using Java and Kotlin.",
+  "Designed and built advanced applications leveraging platform-specific features.",
+  "Integrated third-party APIs and services into existing applications.",
+  "Troubleshot and debugged applications to identify and fix errors, ensuring high performance and stability."
+  ]
+  }
+  ],
+  "projects": [
+  {
+  "name": "NavCast – Weather-Integrated Navigation App",
+  "technologies": "Android, Kotlin, Jetpack Compose",
+  "description": "Developed an innovative Android navigation app overlaying live weather data on route maps by integrating OpenStreetMap and OpenWeatherMap APIs. Implemented real-time smart navigation with interactive, zoomable maps and address geocoding, and visual weather “bubbles” along the journey. Utilized MVVM architecture, Hilt dependency injection, Kotlin Coroutines for asynchronous operations, and followed best practices in Android app development and network security configuration. (Open source under MIT License)"
+  },
+  {
+  "name": "Tippy: Tip Calculator App",
+  "technologies": "Android, Kotlin",
+  "description": "Developed a user-friendly Android app for bill amount and tip percentage calculation via SeekBar. Calculated and displayed tip amount, total amount, and color-coded tip quality rating in real time. Improved input validation and UI for instant feedback, demonstrating a solid understanding of Android components, listeners, and Kotlin best practices."
+  },
+  {
+  "name": "Trinetra – Worker Dashboard App",
+  "technologies": "Kotlin, Firebase, Freelance",
+  "description": "Built a worker dashboard Android app featuring attendance management, task logging, and real-time data synchronization using Firebase Auth and Firestore. Ensured seamless user authentication, instant updates, and efficient record-keeping. Completed as a freelance project with a focus on reliability and responsive mobile UI."
+  },
+  {
+  "name": "Video Downloader App",
+  "technologies": "Python, yt-dlp",
+  "description": "Developed a simple Python application enabling users to download videos from Instagram (YouTube functionality under development) leveraging the yt-dlp library. Features an intuitive interface for entering video URLs and initiating downloads. Streamlined installation with pip, designed for easy extensibility and open source contributions under the MIT License."
+  }
+  ],
+  "education": [
+  {
+  "degree": "Bachelor's degree in Computer Science Engineering",
+  "university": "Maharshi Dayanand University",
+  "location": "Rohtak, Haryana",
+  "graduation_year": "2026"
+  }
+  ]
+ }

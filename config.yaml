@@ -1,0 +1,6 @@
+model: gemini-1.5-flash
+temperature: 0.2
+candidate_count: 1
+template_path: "/absolute/path/to/your/template.tex"
+data_path: "/absolute/path/to/your/data.json"
+output_base: "build/resume"
