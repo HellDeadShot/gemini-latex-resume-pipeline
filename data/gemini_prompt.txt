@@ -16,4 +16,4 @@ Your task:
 Output format:
 - A complete `.tex` file content ready to compile with `pdflatex`.
 - No Markdown formatting, no code fences — pure LaTeX source only.
-- dont add ```latex <code> ``` at starting and ending
+
