@@ -11,7 +11,7 @@ Your task:
 -add only section is present in jsob file dont add any extra section in tex file 
 -only use json data dont leave anything empty
 -and add certificate section if json file have any certification info available else dont add that
--make some changes for get ATS approved
+-add numbers and impactful statistics to projects and experiences for a higher ATS score
 
 Output format:
 - A complete `.tex` file content ready to compile with `pdflatex`.
