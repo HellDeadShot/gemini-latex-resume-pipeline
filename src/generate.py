@@ -28,9 +28,9 @@ IMPORTANT: Output ONLY the raw LaTeX code without any markdown code fences or ba
 LaTeX Template:
 {template_content}
 
-Resume Data (JSON):
-{json_content}
-"""
+    Resume Data (JSON):
+    {json_content}
+    """
 
     # Create Gemini model instance
     model = genai.GenerativeModel("gemini-2.0-flash")
