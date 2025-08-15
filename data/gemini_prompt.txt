@@ -5,11 +5,15 @@ Given:
 2. A JSON object containing resume information.
 
 Your task:
-this is the latax file use as a temple to make a perfect resume latax code for me based on my information in json file
-dont add Summary section
-add only section is present in jsob file dont add any extra section in tex file 
-only use json data dont leave anything empty
+-this is the latax file use as a temple to make a perfect resume latax code for me based on my information in json file
+-dont add Summary section
+-in projects tab add description in points which is easy to read 
+-add only section is present in jsob file dont add any extra section in tex file 
+-only use json data dont leave anything empty
+-and add certificate section if json file have any certification info available else dont add that
+-make some changes for get ATS approved
 
 Output format:
 - A complete `.tex` file content ready to compile with `pdflatex`.
 - No Markdown formatting, no code fences — pure LaTeX source only.
+- dont add ```latex <code> ``` at starting and ending
