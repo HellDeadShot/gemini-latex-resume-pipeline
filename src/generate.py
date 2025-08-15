@@ -1,4 +1,3 @@
-# src/generate.py
 import google.generativeai as genai
 from utils import read_file, write_file
 import os
@@ -15,13 +14,16 @@ def generate_resume(template_path, json_path, prompt_path, output_path):
     Combines LaTeX template and JSON info using Gemini API
     and writes the filled LaTeX file to output_path.
     """
+
     # Read input files
     template_content = read_file(template_path)
     json_content = read_file(json_path)
     prompt_content = read_file(prompt_path)
 
-    # Combine everything into one prompt for Gemini
+    # Updated prompt to request only raw LaTeX without code fences
     full_prompt = f"""{prompt_content}
+
+IMPORTANT: Output ONLY the raw LaTeX code without any markdown code fences or backticks.
 
 LaTeX Template:
 {template_content}
@@ -36,7 +38,14 @@ Resume Data (JSON):
     # Send prompt to Gemini
     response = model.generate_content(full_prompt)
 
-    # Save LaTeX output
-    write_file(output_path, response.text)
+    # Clean output in case the model still adds code fences
+    lines = response.text.splitlines()
+    if lines and lines[0].strip().startswith("```"):
+        lines = lines[1:]
+    if lines and lines[-1].strip().startswith("```"):
+        lines = lines[:-1]
+    cleaned_output = "\n".join(lines)
 
+    # Save LaTeX output
+    write_file(output_path, cleaned_output)
     print(f"LaTeX resume generated at {output_path}")
