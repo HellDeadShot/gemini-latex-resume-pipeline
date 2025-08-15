@@ -21,14 +21,15 @@ def generate_resume(template_path, json_path, prompt_path, output_path):
     prompt_content = read_file(prompt_path)
 
     # Combine everything into one prompt for Gemini
-    full_prompt = f"""{prompt_content}
+    full_prompt = f"""
+    {prompt_content}
 
-LaTeX Template:
-{template_content}
+    LaTeX Template:
+    {template_content}
 
-Resume Data (JSON):
-{json_content}
-"""
+    Resume Data (JSON):
+    {json_content}
+    """
 
     # Create Gemini model instance
     model = genai.GenerativeModel("gemini-2.0-flash")

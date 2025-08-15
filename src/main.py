@@ -7,12 +7,15 @@ from compile import compile_latex
 # Load environment variables from .env
 load_dotenv()
 
-# Paths to files (adjust these if your files are in a different location)
-TEMPLATE_PATH = "/home/helldeadshot/vs code/Latex/gemini-latex-resume-pipeline/data/template.tex"   # Path to your LaTeX template
-JSON_PATH = "/home/helldeadshot/vs code/Latex/gemini-latex-resume-pipeline/data/sample_resume.json"          # Path to your resume data
-PROMPT_PATH = "/home/helldeadshot/vs code/Latex/gemini-latex-resume-pipeline/data/gemini_prompt.txt" 
-OUTPUT_TEX_PATH = "/home/helldeadshot/vs code/Latex/gemini-latex-resume-pipeline/output/resume.tex"
-OUTPUT_PDF_PATH = "/home/helldeadshot/vs code/Latex/gemini-latex-resume-pipeline/output/resume.pdf"
+# Get the project root directory (parent of src)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Paths to files relative to project root
+TEMPLATE_PATH = os.path.join(PROJECT_ROOT, "data", "template.tex")
+JSON_PATH = os.path.join(PROJECT_ROOT, "data", "sample_resume.json")
+PROMPT_PATH = os.path.join(PROJECT_ROOT, "data", "gemini_prompt.txt")
+OUTPUT_TEX_PATH = os.path.join(PROJECT_ROOT, "output", "resume.tex")
+OUTPUT_PDF_PATH = os.path.join(PROJECT_ROOT, "output", "resume.pdf")
 
 def main():
     # Step 1: Generate LaTeX resume from Gemini API
