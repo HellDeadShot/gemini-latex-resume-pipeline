@@ -15,7 +15,7 @@ TEMPLATE_PATH = os.path.join(PROJECT_ROOT, "data", "template.tex")
 JSON_PATH = os.path.join(PROJECT_ROOT, "data", "sample_resume.json")
 PROMPT_PATH = os.path.join(PROJECT_ROOT, "data", "gemini_prompt.txt")
 OUTPUT_TEX_PATH = os.path.join(PROJECT_ROOT, "output", "resume.tex")
-OUTPUT_PDF_PATH = os.path.join(PROJECT_ROOT, "output", "resume.pdf")
+OUTPUT_PDF_PATH = os.path.join(PROJECT_ROOT, "output", "resume")
 
 def main():
     # Step 1: Generate LaTeX resume from Gemini API
