@@ -1,33 +1,16 @@
-# src/main.py
-import os
-from dotenv import load_dotenv
-from generate import generate_resume
-from compile import compile_latex
-from fastapi import FastAPI
-
-# Load environment variables from .env
-load_dotenv()
-
-# Get the project root directory (parent of src)
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# Paths to files relative to project root
-TEMPLATE_PATH = os.path.join(PROJECT_ROOT, "data", "template.tex")
-JSON_PATH = os.path.join(PROJECT_ROOT, "data", "sample_resume.json")
-PROMPT_PATH = os.path.join(PROJECT_ROOT, "data", "gemini_prompt.txt")
-OUTPUT_TEX_PATH = os.path.join(PROJECT_ROOT, "output", "resume.tex")
-OUTPUT_PDF_PATH = os.path.join(PROJECT_ROOT, "output", "resume")
+from fastapi import FastAPI, Request
+from src.wrapper import resume_wrapper
+from typing import Any
 
 app = FastAPI()
 
 @app.post("/generate")
-def handle_request():
-    generate_resume(
-        template_path=TEMPLATE_PATH,
-        json_path=JSON_PATH,
-        prompt_path=PROMPT_PATH,
-        output_path=OUTPUT_TEX_PATH
-    )
+def handle_request(resume_data: dict[str, Any]):
+    resume_wrapper(resume_data)
+    return {"response":"resume generated successfully"}
 
-    # Step 2: Compile LaTeX to PDF
-    compile_latex(OUTPUT_TEX_PATH, OUTPUT_PDF_PATH)
+@app.middleware("http")
+async def request_logger(request: Request, call_next):
+    print(f"{request.method} {request.url}")
+    response = await call_next(request)
+    return response
