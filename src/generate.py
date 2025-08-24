@@ -1,4 +1,4 @@
-import google.generativeai as genai
+from google import genai
 from src.utils import read_file, write_file
 import os
 from dotenv import load_dotenv
@@ -6,8 +6,6 @@ import json
 
 load_dotenv()  # Load .env file
 
-# Configure Gemini API
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 def generate_resume(template_path, json_data, prompt_path, output_path):
     """
@@ -18,7 +16,8 @@ def generate_resume(template_path, json_data, prompt_path, output_path):
         # Read input files
         template_content = read_file(template_path)
         prompt_content = read_file(prompt_path)
-        json_content = json.loads(json_data)
+        json_content = json_data
+        key = os.getenv("API_KEY")
 
         # Updated prompt to request only raw LaTeX without code fences
         full_prompt = f"""{prompt_content}
@@ -33,10 +32,13 @@ def generate_resume(template_path, json_data, prompt_path, output_path):
         """
 
         # Create Gemini model instance
-        model = genai.GenerativeModel("gemini-2.0-flash")
+        client = genai.Client(api_key=key)
 
         # Send prompt to Gemini
-        response = model.generate_content(full_prompt)
+        response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=[full_prompt]
+        )
 
         # Clean output in case the model still adds code fences
         lines = response.text.splitlines()
@@ -50,4 +52,6 @@ def generate_resume(template_path, json_data, prompt_path, output_path):
         write_file(output_path, cleaned_output)
         print(f"LaTeX resume generated at {output_path}")
     except Exception as e:
+        import traceback
+        print(traceback.print_exc())
         print(f"Error generating resume: {e}")
